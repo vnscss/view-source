@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Preview</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/an-old-hope.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/html.min.js"></script>
+</head>
+<body style="margin: 0; padding: 0; margin-top: 0; background-color:rgb(28, 29, 33);">
+    <pre><code style="overflow: initial;" id="code" class="html"></code></pre>
+
+    <script>
+        const request = new XMLHttpRequest();
+        request.open('GET', 'index.html', true);
+        request.onload = function() {
+            if (this.status >= 200 && this.status < 400) {
+                const codeElement = document.getElementById('code');
+                codeElement.textContent = this.response;
+                hljs.highlightElement(codeElement);
+            } else {
+                console.error('Failed to load file');
+            }
+        };
+        request.onerror = function() {
+            console.error('Failed to load file');
+        };
+        request.send();
+    </script>
+</body>
+</html>
