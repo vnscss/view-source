@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Preview</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/an-old-hope.min.css">
+    <!--Link do tema para ser aplicado no texto-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/an-old-hope.min.css"> <!--Onde achar os temas https://highlightjs.org-->
+    <!--Scripts da biblioteca highlight.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/html.min.js"></script>
 </head>
@@ -12,7 +14,9 @@
     <pre><code style="overflow: initial;" id="code" class="html"></code></pre>
 
     <script>
+        //Script responsável por coletar os dados do arquivo citado, enviar para o highlight.js e injetar o texto junto com css na tag <code>
         const request = new XMLHttpRequest();
+        //                      ↓ Caminho do arquivo que deseja enviar para o highlight.js
         request.open('GET', 'index.html', true);
         request.onload = function() {
             if (this.status >= 200 && this.status < 400) {

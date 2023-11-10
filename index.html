@@ -11,14 +11,17 @@
     <div id="container">
         <barra id="barra">
            <div id="botoes">
+            <!--Botões chamando as funções para alterar o .src do iframe-->
             <button id="html" onclick="btnHtml();">Html</button> <button id="css" onclick="btnCss();">Css</button> <button id="js" onclick="btnJs();">Js</button>
            </div> 
         </barra>
         <div id="view-source-frame">
+            <!--Iframe exibindo o view-html, view-css ou view-js-->
             <iframe id="iframe" src="view-html.html" width="1000px" height="500px"></iframe>
         </div>
     </div>
     <script>
+          //Script que altera o .src do iframe acima
           function btnHtml() {
             document.getElementById("iframe").src = "view-html.html";
         }
